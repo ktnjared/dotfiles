@@ -26,7 +26,7 @@ New-Alias ei "C:\Users\jschmidt\AppData\Local\Programs\Microsoft VS Code Insider
 Function Update-Pip {
     pip list -o --format json `
     | ConvertFrom-Json `
-    | foreach {pip install $_.name -U --no-warn-script-location}
+    | ForEach-Object {pip install $_.name -U --no-warn-script-location}
 }
 
 ### Making PowerShell Pretty!
